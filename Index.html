@@ -1,37 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <title>The Odin Project - Landing Page</title>
 </head>
-<body class="body">
-    <div class="Header">
-        <div class="headertop">
-        <div class="header logo">Header Logo</div>
-            <ul>
-            <li><a href="#">Header link one</a></li>
-            <li><a href="#">Header link two</a></li>
-            <li><a href="#">Header link three</a></li>
-            </ul>
-        </div> 
-        <div class="headerbody">
-            <div class ="hbleft">
-                <div class ="htitle">
-                    This Website is Awesome
-                </div>
-                <div class ="title-text">
-                  This website has some subtext tjat goes here under the main tile. It's a smaller font and the color is lower contrast
-                </div>
-                <button>Sign up</button> 
-                
-            </div>
-            <div class="hbright">
-                <img src>
-            </div>
-        </div>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">77Kenji</div>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">History</a>
+        </li>
+        <li>
+          <a href="#">Login</a>
+        </li>
+      </ul>
     </div>
-    
+  </nav>
+
+  <header>
+    <div class="container">
+      <div class="hero-text">
+      <h1>The GOAT of Efootball</h1>
+      <p>77kenji is an eFootball maestro, celebrated for his clinical finishing and tactical brilliance. His consistent high-level play makes him a formidable opponent.</p>
+      <button class="neon-button" type="button">Donate</button>
+      </div>
+      <div class="crop-container">
+        <img src="./images/header-image.jpg" alt="">
+      </div>
+    </div>
+  </header>
+
+  <section class="games">
+    <div class="container">
+      <h2>Some of the most famous retro games</h2>
+        <ul class="boxes">
+          <li>				
+            <h3>Pac-Man</h3>
+          </li>
+          <li>
+            <h3>Tetris</h3>
+          </li>
+          <li>
+            <h3>Street Fighter II</h3>
+          </li>
+          <li>
+            <h3>Super Mario Bros</h3>
+          </li>
+        </ul>
+        <ul class="subtext">
+          <li><p>The classic and enormously popular Pac-Man video game came out in Japan on May 21, 1980</p></li>
+          <li><p>Tetris is a puzzle video game created by Soviet software engineer Alexey Pajitnov in 1984</p></li>
+          <li><p>On Feb. 6, 1991, Street Fighter II was released as an arcade game in North America</p></li>
+          <li><p>The first game in the series, Super Mario Bros., released for the Nintendo Entertainment System (NES) in 1985</p></li>
+        </ul>
+    </div>    
+  </section>
+
+  <section class="quote">
+    <div class="container">
+      <h3>If Tetris has taught me anything, it's that errors pile up and accomplishments disappear.</h4>
+      <h4>Unknown player</h3>
+    </div>
+  </section>
+
+  <section class="call-to-action">
+    <div class="container">
+      <div>
+      <h3>Call to action! It's time!</h3>
+      <p>Sign up for our product by clicking that button right over there!</p>        
+      </div>
+      <button class="neon-button" type="button">Sign up</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Copyright &copy The Odin Project</p>
+    <p>Developed by Yohana Fernandes</p>
+  </footer>
 </body>
 </html>
