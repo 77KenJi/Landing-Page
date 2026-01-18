@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --clr-neon: hsl(317 100% 54%);
-    --blue-neon: rgb(0, 208, 255);
-  }
+    --bg: #121212;        
+    --surface: #1a1a1a; 
+    --text: #eaeaea;     
+    --muted: #9a9a9a;  
+    --red: #c1121f;     
+    --border: #2a2a2a; 
+}
 
 * {
     box-sizing: border-box;
@@ -13,23 +16,18 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    background-image: 
-        radial-gradient(rgba(0, 123, 255, 0.5), rgb(166, 0, 255, 0.5)),
-        url('../images/background.jpg');
-    background-size: cover;
-    color: #fff;
+    background: var(--bg);
+    color: var(--text);
 }
 
-h1,
-h2 {
+h1, h2 {
     margin-bottom: 15px;
 }
 
 header p,
 button,
-nav 
 nav a,
 h4 {
     font-size: 18px;
@@ -46,9 +44,10 @@ ul {
 }
 
 nav {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--surface);
+    color: var(--text);
     height: 60px;
+    border-bottom: 1px solid var(--border);
 }
 
 nav .container {
@@ -72,24 +71,18 @@ nav .logo {
 }
 
 nav a {
-    color: #fff;
+    color: var(--text);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 
-        0 0 1em var(--clr-neon), 
-        0 0 0.45em currentColor;
 }
 
 nav a:hover {
-    color: var(--clr-neon);
-    text-shadow:
-        0.5em 0.5em 2em var(--clr-neon), 
-        0.5em 0.5em 2em currentColor;
+    color: var(--red);
 }
 
 header {
-    background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7));
+    background: var(--bg);
     min-height: 450px;
     padding: 100px 0 150px;
     height: 100vh;
@@ -107,6 +100,7 @@ header .hero-text {
 
 header h1 {
     font-size: 48px;
+    color: var(--red);
 }
 
 header .crop-container {
@@ -114,18 +108,14 @@ header .crop-container {
     width: 500px;
     height: 300px;
     overflow: hidden;
-    border: 1px solid #0000ff;
+    border: 1px solid var(--border);
     border-radius: 0.25em;
-    box-shadow: 
-        inset 
-        0 0 1em 0 #0000ff, 
-        0 0 1em 0 #0000ff;
+    background: var(--surface);
 }
 
 header .crop-container img {
     margin-top: -50px;
     width: 500px;
-    
 }
 
 button {
@@ -140,71 +130,16 @@ button {
     width: 150px;
     height: 50px;
     cursor: pointer;
-    background: none;
-    color: var(--clr-neon);
-    border: var(--clr-neon) 4px solid;
-    padding: 0.25em 1em;
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
     border-radius: 0.25em;
-    position: relative;
-    text-shadow: 
-        0 0 0.125em hsl(0 0% 100% / 0.3), 
-        0 0 0.45em currentColor;
-
-    box-shadow: 
-        inset 
-        0 0 0.5em 0 var(--clr-neon), 
-        0 0 0.5em 0 var(--clr-neon);
+    transition: 0.3s ease;
 }
 
-.neon-button::before {
-    pointer-events: none;
-    content: '';
-    position: absolute;
-    background: var(--clr-neon);
-    top: 120%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    transform: perspective(1.5em) rotateX(40deg) scale(1, 0.35);
-    filter: blur(2em);
-    opacity: 0.7;
-}
-
-.neon-button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    box-shadow: 0 0 2em 0.5em var(--clr-neon);
-    opacity: 0;
-    background-color: var(--clr-neon);
-    z-index: -1;
-    transition: opacity 100ms linear;
-}
-
-.neon-button:hover,
-.neon-button:focus {
-    background: var(--clr-neon);
-    color: #31202b;
-    text-shadow: none;
-}
-
-.neon-button:hover::before,
-.neon-button:focus::before {
-    opacity: 1;
-}
-
-.neon-button:hover::after,
-.neon-button:hover::after {
-    opacity: 1;
-}
-
-/* Games section */
-.games {
-    min-height: 450px;
+.neon-button:hover {
+    background: var(--red);
+    color: #ffffff;
 }
 
 .games .container {
@@ -212,14 +147,15 @@ button {
     flex-direction: column;
     align-items: center;
     border-radius: 1em;
-    background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7));
+    background: var(--surface);
     margin: 100px auto;
     padding-top: 40px;
+    border: 1px solid var(--border);
 }
 
 .games h2 {
     font-size: 36px;
-    padding-bottom: 20px;
+    color: var(--red);
 }
 
 .games ul {
@@ -235,38 +171,17 @@ button {
     overflow: hidden;
 }
 
-.boxes li:nth-of-type(1) {
-    background: url('../images/pacman.jpg');
-}
-
-.boxes li:nth-of-type(2) {
-    background: url('../images/tetris.jpg');
-}
-
-.boxes li:nth-of-type(3) {
-    background: url('../images/streetfighter.jpg');
-}
-
-.boxes li:nth-of-type(4) {
-    background: url('../images/supermario.jpg');
-}
-
 .boxes li {
-    border: 4px solid var(--blue-neon);
+    border: 1px solid var(--border);
     border-radius: 1em;
-    box-shadow: 
-        inset 
-        0 0 0.5em 0 #0000ff, 
-        0 0 1em 0 #0000ff;
-    position: relative;       
+    position: relative;
+    background: var(--surface);
+    transition: 0.3s ease;
 }
 
 .boxes li:hover {
-    box-shadow: 
-        inset 
-        0 0 4em 0 #0000ff, 
-        0 0 4em #0000ff;
-    border: none;        
+    background: #1f1f1f;
+    border-color: var(--red);
 }
 
 .boxes li h3 {
@@ -274,7 +189,7 @@ button {
     height: 100%;
     padding: 80px 5px 0;
     font-weight: 500;
-    color: #fff;
+    color: #ffffff;
     font-size: 18px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -283,81 +198,56 @@ button {
     transition: 0.5s;
 }
 
-.boxes h3:hover {
-    background: radial-gradient(rgba(136, 0, 255, 1), rgb(0, 0, 255, 0.5));
+.boxes li:hover h3 {
     opacity: 1;
 }
 
-/* Quote section */
 .quote {
     min-height: 450px;
-    background: radial-gradient(rgb(68, 0, 128), rgb(68, 0, 128));
+    background: var(--surface);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .quote h3 {
     font-weight: lighter;
     font-style: italic;
     font-size: 36px;
+    color: var(--text);
 }
 
 .quote h4 {
     text-align: right;
+    color: var(--red);
 }
 
-.quote h4::before {
-    content: "\2014\0020";
-    font-family: 'Gelasio', serif;
-}
 
-.quote h3::before {
-    font-family: 'Gelasio', serif;
-    text-align: left;
-    content: "\201c";
-    font-size: 100px;
-    display: block;
-    margin-bottom: -40px;
-    margin-top: -20px;
-}
-
-/* Call-to-action section */
 .call-to-action {
     min-height: 300px;
-    display: flex;
-    align-items: center;
-}
-
-.call-to-action .container {
-    height: 150px;
     width: 100%;
     border-radius: 0.50em;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(rgb(0, 0, 0, 0.85), rgb(0, 0, 0, 0.85));
+    background: var(--bg);
+    border: 1px solid var(--border);
 }
 
-.call-to-action button:hover,
-.call-to-action button:focus,
-.call-to-action button::before {
-    background: none;
-    color: var(--clr-neon);
-    transform: none;
-}
-
-/* Footer */
 footer {
     min-height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: #1f1f1f;
+    border-top: 1px solid var(--border);
 }
 
 footer p {
     padding-bottom: 5px;
+    color: var(--text);
 }
